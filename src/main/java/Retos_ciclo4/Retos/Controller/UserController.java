@@ -4,6 +4,8 @@ package Retos_ciclo4.Retos.Controller;
  */
 
 import java.util.List;
+import java.util.Optional;
+
 /**
  * 
  */
@@ -37,6 +39,10 @@ public class UserController {
     @GetMapping("/all")
     public List<User> getAll() {
         return userService.getAll();
+    }
+    @GetMapping("/{id}")
+    public Optional<User> getUser(@PathVariable("id") Integer id){
+        return userService.getUser(id);
     }
 
     @PostMapping("/new")

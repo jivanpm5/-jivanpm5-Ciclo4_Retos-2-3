@@ -1,16 +1,20 @@
 package Retos_ciclo4.Retos.Model;
 
 import java.util.Date;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * @author 
+ */
+
+@Document(collection = "users")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "users")
 public class User {
     @Id
     private Integer id;
@@ -24,4 +28,5 @@ public class User {
     private String password;
     private String zone;
     private String type;
+
 }

@@ -22,6 +22,11 @@ public class UserRepository {
         return userCrudRepository.findById(id);
     }
 
+    public boolean ExisteEmail(String email){
+        Optional<User> user = userCrudRepository.findByEmail(email);
+        return !user.isEmpty();
+    }
+
     public User save(User user){
         return userCrudRepository.save(user);
     }
